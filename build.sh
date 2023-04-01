@@ -8,4 +8,5 @@ if [ $? -eq 0]; then
   echo "Compiling successfully"
 else
   echo "Error compiling" >&2
+  exit 1
 fi
