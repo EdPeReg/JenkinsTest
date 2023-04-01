@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Running the program"
+date
 ./main
 
 if [ $? -eq 0 ]; then
