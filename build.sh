@@ -2,7 +2,7 @@
 
 echo "Compiling software"
 gcc -Wall -Wextra -fsanitize=address -pedantic-errors main.c -o main
-date
+echo date
 
 if [ $? -eq 0 ]; then
   echo "Compiling successfully"
