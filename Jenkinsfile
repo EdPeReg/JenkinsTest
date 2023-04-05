@@ -7,9 +7,9 @@ pipeline {
     stages {
         stage('Download repository') {
             // Run this in the agent with label main, this will be our main label
-            /*agent {
+            agent {
                 label 'main'
-            }*/
+            }
             steps {
                 echo 'Stage download repository...'
                 git branch: 'main', credentialsId: 'b28f0c89-811b-409d-b16c-630857f090e7', url: 'https://github.com/EdPeReg/JenkinsTest.git'
@@ -17,9 +17,9 @@ pipeline {
         }
         
         stage('Changing permissions to sh files') {
-            /*agent {
+            agent {
                 label 'MockLinuxFedora'
-            }*/
+            }
             steps {
                 sh 'chmod +x build.sh'
                 sh 'chmod +x run.sh'
@@ -27,18 +27,18 @@ pipeline {
         }
         
         stage('Building SW') {
-            /*agent {
+            agent {
                 label 'MockLinuxFedora'
-            }*/
+            }
             steps {
                 sh returnStdout: true, script: './build.sh'
             }
         }
     
         stage('Running SW') {
-            /*agent {
+            agent {
                 label 'main'
-            }*/
+            }
             steps {
                 sh returnStdout: true, script: './run.sh'
             }
