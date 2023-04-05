@@ -2,7 +2,7 @@
 // to download the SW and run the SW, while the mock agent will be in charge of compile the SW
 
 pipeline {
-    //agent any // This means that each stage will take any agent available, only if the stage it doesn't specify an agent
+    agent any // This means that each stage will take any agent available, only if the stage it doesn't specify an agent
     
     stages {
         stage('Download repository') {
