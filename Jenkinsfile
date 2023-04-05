@@ -13,7 +13,6 @@ pipeline {
             steps {
                 echo 'Stage download repository...'
                 git branch: 'main', credentialsId: 'b28f0c89-811b-409d-b16c-630857f090e7', url: 'https://github.com/EdPeReg/JenkinsTest.git'
-                sleep 5
             }
         }
         
@@ -24,7 +23,6 @@ pipeline {
             steps {
                 sh 'chmod +x build.sh'
                 sh 'chmod +x run.sh'
-                sleep 5
             }
         }
         
@@ -34,7 +32,6 @@ pipeline {
             }
             steps {
                 sh returnStdout: true, script: './build.sh'
-                sleep 5
             }
         }
     
