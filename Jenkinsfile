@@ -37,7 +37,7 @@ pipeline {
     
         stage('Running SW') {
             agent {
-                label 'main'
+                label 'MockLinuxFedora'
             }
             steps {
                 sh returnStdout: true, script: './run.sh'
